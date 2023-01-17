@@ -3,6 +3,7 @@
 
 
 <?php require 'views/show.php'?>
+<?php require 'views/dashboard.php'?>
 
 
 
