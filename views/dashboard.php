@@ -16,9 +16,6 @@
                   <i class="icon-book-open primary font-large-2 float-right"></i>
                 </div>
               </div>
-              <!-- <div class="progress mt-1 mb-0" style="height: 7px;">
-                <div class="progress-bar bg-primary" role="progressbar" style="width: 10%" aria-valuenow="50" aria-valuemin="0" aria-valuemax="100"></div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -36,9 +33,6 @@
                   <i class="icon-bubbles warning font-large-2 float-right"></i>
                 </div>
               </div>
-              <!-- <div class="progress mt-1 mb-0" style="height: 7px;">
-                <div class="progress-bar bg-warning" role="progressbar" style="width: 35%" aria-valuenow="35" aria-valuemin="0" aria-valuemax="100"></div>
-              </div> -->
             </div>
           </div>
         </div>
@@ -57,9 +51,6 @@
                   <i class="icon-cup success font-large-2 float-right"></i>
                 </div>
               </div>
-              <!-- <div class="progress mt-1 mb-0" style="height: 7px;">
-                <div class="progress-bar bg-success" role="progressbar" style="width: 60%" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
-              </div> -->
             </div>
           </div>
         </div>

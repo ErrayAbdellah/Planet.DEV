@@ -17,7 +17,15 @@ class User{
     }
 
     public static function show(){
-
+        try{
+            $connect = new  Dbconnection();
+            $qry = "SELECT * FROM article";
+            $stmt = $connect->connection()->prepare($qry);
+            $stmt->execute();
+            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
     }
     public static function create(){
 
@@ -30,3 +38,6 @@ class User{
     }
 
 }
+
+
+

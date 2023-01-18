@@ -1,10 +1,40 @@
 
-<div class="col py-3" id="home">
-    <h3>Left Sidebar with Submenus</h3>
-    <p class="lead">
-        An example 2-level sidebar with collasible menu items. The menu functions like an "accordion" where only a single 
-        menu is be open at a time. While the sidebar itself is not toggle-able, it does responsively shrink in width on smaller screens.</p>
-    <ul class="list-unstyled">
-        <li><h5>Responsive</h5> shrinks in width, hides text labels and collapses to icons only on mobile</li>
-    </ul>
-</div>
+<section id="home"class="col ftco-section mt-5 ">
+		<div class="container mt-5">
+			
+			<div class="row">
+				<div class="col-md-12">
+				
+					<div class="table-wrap">
+						<table class="w-100 table myaccordion table-hover" id="accordion">
+						  <thead>
+						    <tr>
+						      <th>#</th>
+						      <th>title</th>
+						      <th>Qat</th>
+						      <th>Quantity</th>
+						      <th>Total</th>
+							  <th>&nbsp;</th>
+						    </tr>
+						  </thead>
+						  <tbody>
+						    <tr data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+						      <th scope="row">1</th>
+						      <td>Laptop Technology AS2020</td>
+						      <td>$200.00</td>
+						      <td>2</td>
+						      <td>$400.00</td>
+							  <td><i class="fa" aria-hidden="true"></i></td>
+						    </tr>
+						    <tr id="collapseOne" class="collapse" class="w-100 bg-light-cyan border-2" >
+						    	<td colspan="5">
+						    		<p> Lorem ipsum dolor sit amet, consectetur adipisicing elit. Porro iste, facere sunt sequi nostrum ipsa, amet doloremque magnam reiciendis tempore sapiente. Necessitatibus recusandae harum nam sit perferendis quia inventore natus.</p>
+						    	</td>
+						    </tr>
+						  </tbody>
+						</table>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
