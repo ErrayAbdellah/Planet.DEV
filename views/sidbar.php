@@ -16,7 +16,7 @@
                     </li>
                     <li>
                         <button onclick="bntEdit()" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
-                            <i class="bi bi-pencil-square"></i> <span class="ms-1 d-none d-sm-inline">Edit Article</span></button>
+                            <i class="bi bi-pencil-square"></i> <span class="ms-1 d-none d-sm-inline">Settings</span></button>
                     </li>
                     <!-- <li>
                         <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
