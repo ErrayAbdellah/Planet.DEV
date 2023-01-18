@@ -16,7 +16,7 @@
         </div>  
     </div>
     <div class="d-flex justify-content-end mt-3">
-        <button type="button" class="btn btn-danger mx-3">Danger</button>
+        <button type="button" class="btn btn-danger mx-3" onclick="cancelSettings()">Cancel</button>
         <button type="button" class="btn btn-info mx-3">Add new Article</button>
         <button type="button" class="btn btn-secondary mx-3">Add</button>
     </div>

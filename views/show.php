@@ -11,19 +11,17 @@
 						    <tr>
 						      <th>#</th>
 						      <th>title</th>
-						      <th>Qat</th>
-						      <th>Quantity</th>
-						      <th>Total</th>
+						      <th>categorie</th>
+						      <th>dateCreate</th>
 							  <th>&nbsp;</th>
 						    </tr>
 						  </thead>
 						  <tbody>
 						    <tr data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
 						      <th scope="row">1</th>
-						      <td>Laptop Technology AS2020</td>
-						      <td>$200.00</td>
-						      <td>2</td>
-						      <td>$400.00</td>
+						      <td>HTML</td>
+						      <td>web</td>
+						      <td>2023/06/18</td>
 							  <td><i class="fa" aria-hidden="true"></i></td>
 						    </tr>
 						    <tr id="collapseOne" class="collapse" class="w-100 bg-light-cyan border-2" >

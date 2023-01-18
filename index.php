@@ -1,12 +1,11 @@
-<?php require 'views/head.php'?>
-<?php require 'views/sidbar.php'?>
-
-
-<?php require 'views/dashboard.php'?>
-<?php require 'views/show.php'?>
-<!-- <?php require 'views/add.php'?> -->
-<?php require 'views/settings.php'?>
-
-
-
-<?php require 'views/footer.php'?>
+<?php 
+    require 'views/head.php';
+    require 'views/sidbar.php';
+    require 'views/dashboard.php';
+    require 'views/show.php';
+    require 'views/add.php';
+    require 'views/edit.php';
+    require 'views/settings.php';
+    require 'views/footer.php';
+ 
+ ?>
