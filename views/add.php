@@ -1,4 +1,8 @@
+<?php
+    $cat = Categorie::show();
+    var_dump($cat);
 
+?>
 <section id="add"  class="col mt-5">
     <h3 class="text-center my-5">Setting Article</h3>
     <div class="d-flex justify-content-end w-100 align-items-center">

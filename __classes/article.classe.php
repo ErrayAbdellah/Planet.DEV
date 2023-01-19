@@ -17,6 +17,7 @@ class Article{
         $this->id_admin      = $id_admin      ;
         $this->dateCreate    = $dateCreate    ;
     }
+    
     public static function show(){
         try{
             $connect = new  Dbconnection();
