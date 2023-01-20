@@ -21,7 +21,7 @@
 						      <th scope="row">1</th>
 						      <td>HTML</td>
 						      <td>web</td>
-						      <td>2023/06/18</td>
+						      <td</td>
 							  <td><i class="fa" aria-hidden="true"></i></td>
 						    </tr>
 						    <tr id="collapseOne" class="collapse" class="w-100 bg-light-cyan border-2" >
