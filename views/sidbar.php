@@ -18,15 +18,10 @@
                         <button onclick="bntEdit()" data-bs-toggle="collapse" class="nav-link px-0 align-middle ">
                             <i class="bi bi-pencil-square"></i> <span class="ms-1 d-none d-sm-inline">Settings</span></button>
                     </li>
-                    <!-- <li>
-                        <a href="#submenu3" data-bs-toggle="collapse" class="nav-link px-0 align-middle">
-                            <i class="bi bi-trash"></i> <span class="ms-1 d-none d-sm-inline">Delete Article</span> </a>
-                    </li> -->
                 </ul>
                 <hr>
                 <div class="dropdown pb-4">
                     <a href="#" class="d-flex align-items-center text-white text-decoration-none dropdown-toggle" id="dropdownUser1" data-bs-toggle="dropdown" aria-expanded="false">
-                        <!-- <img src="https://github.com/mdo.png" alt="hugenerd" width="30" height="30" class="rounded-circle"> -->
                         <span class="d-none d-sm-inline mx-1">loser</span>
                     </a>
                     <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">

@@ -1,6 +1,6 @@
 <?php
 
-use User as GlobalUser;
+
 
 session_start();
 class Article{
@@ -12,15 +12,16 @@ class Article{
 
     public function __construct($title,$content,$id_admin,$dateCreate)
     {
-        $this->title     = $title     ;
+        $this->title      = $title     ;
         $this->content  = $content ;
         $this->id_admin      = $id_admin      ;
         $this->dateCreate    = $dateCreate    ;
     }
+    
     public static function show(){
         try{
             $connect = new  Dbconnection();
-            $qry = "SELECT * FROM article";
+            $qry = "SELECT a.*,c.name as 'categorie' FROM article a , categorie c WHERE id_cat = c.id ";
             $stmt = $connect->connection()->prepare($qry);
             $stmt->execute();
             return $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -28,8 +29,22 @@ class Article{
             "Error".$e->getMessage();
         }
     }
-    public static function create(){
+    public static function create($title,$content,$id_admin,$dateCreate,$id_cat){
+        try{
+            $con = new  Dbconnection();
+            $connect = $con->connection();
+            $qry = "INSERT INTO `article`( `id_Admin`, `title`, `content`, `dateCreate`, `id_cat`) VALUES (:id_admin,:title,:content,:dateCreate,:id_cat)";
+            $stmt = $connect->prepare($qry);
+            $stmt->bindParam(':title',$title );
+            $stmt->bindParam(':content',$content );
+            $stmt->bindParam(':id_admin',$id_admin );
+            $stmt->bindParam(':dateCreate',$dateCreate );
+            $stmt->bindParam(':id_cat',$id_cat );
+            $stmt->execute();
 
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
     }
     public static function upDate($id){
 
@@ -41,4 +56,4 @@ class Article{
 
 }
 
-var_dump(Article::show());
+// var_dump(Article::show());

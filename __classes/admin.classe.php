@@ -9,12 +9,12 @@ class User{
     private $pwd ;
 
 
-    public function __construct($name,$email,$pwd,)
-    {
-        $this->name     = $name     ;
-        $this->email    = $email    ;
-        $this->pwd      = $pwd      ;
-    }
+    // public function __construct($name,$email,$pwd,)
+    // {
+    //     $this->name     = $name     ;
+    //     $this->email    = $email    ;
+    //     $this->pwd      = $pwd      ;
+    // }
 
     public static function show(){
         try{
