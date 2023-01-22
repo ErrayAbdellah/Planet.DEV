@@ -58,12 +58,16 @@ function addEdit(){
 
 
 function addArticle(){
+
+    let Categorie = document.getElementById('categorySelect');
+
+    console.log(Categorie);
+
     lenght++;
     $('#linghtCoount').val(lenght);
-// console.log(lenght);
     $("#addNewArticle").append(`<div class="d-flex justify-content-end w-100 align-items-center" >
                                     <div class="mx-5">
-                                        <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect" id="">
+                                        <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect[]" id="">
                                             <option selected>..Chose Categorie..</option>
                                             <?php foreach ($cat as $row){ ?>
                                             <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
@@ -72,9 +76,9 @@ function addArticle(){
                                     </div>
                                     <div class="w-75">
                                         <div class="my-1 ">
-                                                <input class="form-control w-25" type="text" name="txtTitle" id="txtTitle" placeholder="Title">
+                                                <input class="form-control w-25" type="text" name="txtTitle[]" id="txtTitle" placeholder="Title">
                                             </div> 
-                                            <textarea class="w-100" name="txtArticle" id="txtArticle" cols="70" rows="6"></textarea>
+                                            <textarea class="w-100" name="txtArticle[]" id="txtArticle" cols="70" rows="6"></textarea>
                                             </div>
                                             <button class="btn btn-danger" type="button" id="btnRemove">Remove</button>
                                             </div>`);

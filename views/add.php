@@ -4,14 +4,14 @@ $cat = Categorie::show();
 
 if(isset($_POST['bntADD'])){
 
-    for ($i = 0; $i < count($_POST['linghtCoount']); $i++){
-        $title = $_POST['txtTitle'][$i];
-        $content = $_POST['txtArticle'][$i];
-        $category = $_POST['categorySelect'][$i];
+    for ($i = 0; $i < $_POST['linghtCoount']; $i++){
+        $title = $_POST["txtTitle"][$i];
+        $content = $_POST["txtArticle"][$i];
+        $category = $_POST["categorySelect"][$i];
         $admin = 1; 
         $date = date('y-m-d');
-        // echo "<script>alert('$category')</script>";
-        Article::create($title, $content, $admin, $date, $category);
+        // echo "<script>alert('$title')</script>";
+         Article::create($title, $content, $admin, $date, $category);
     }
 }
 ?>
@@ -21,7 +21,7 @@ if(isset($_POST['bntADD'])){
         <div id="addNewArticle">
             <div class="d-flex justify-content-end w-100 align-items-center" >
                 <div class="mx-5">
-                    <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect[]" id="">
+                    <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect[]" id="categorySelect">
                         <option selected>..Chose Categorie..</option>
                         <?php foreach ($cat as $row){ ?>
                         <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
