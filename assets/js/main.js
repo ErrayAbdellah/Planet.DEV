@@ -113,3 +113,9 @@ $('body').on('click','#btnRemove',function(){
     lenght--;
     $('#linghtCoount').val(lenght);
 });
+
+
+
+$(document).ready( function () {
+    $('#dataTable').DataTable();
+} );
