@@ -2,7 +2,7 @@
 
 
 
-session_start();
+
 class Article{
     private $title ;
     private $content ;

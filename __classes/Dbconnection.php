@@ -1,6 +1,8 @@
 <?php 
+session_start();
 
 class Dbconnection{
+
 
     private $host = "localhost";
     private $name = "root";

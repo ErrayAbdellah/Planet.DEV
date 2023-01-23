@@ -1,7 +1,7 @@
 <?php
-require 'DbConnection.php';
+// require 'DbConnection.php';
 
-session_start();
+
 class User{
 
     private $name ;
@@ -9,20 +9,20 @@ class User{
     private $pwd ;
 
 
-    // public function __construct($name,$email,$pwd,)
-    // {
-    //     $this->name     = $name     ;
-    //     $this->email    = $email    ;
-    //     $this->pwd      = $pwd      ;
-    // }
-
-    public static function show(){
+    public static function signIn($email,$pwd){
         try{
             $connect = new  Dbconnection();
-            $qry = "SELECT * FROM article";
+            $qry = "SELECT * FROM admin where email like '$email' and pwd like '$pwd'";
             $stmt = $connect->connection()->prepare($qry);
             $stmt->execute();
-            return $stmt->fetchAll(PDO::FETCH_ASSOC);
+            $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+            if($stmt->rowCount() != 0){
+
+                $_SESSION['admin'] = $result ;
+                header('location:./index.php');
+
+            }
+
         }catch(PDOException $e){
             "Error".$e->getMessage();
         }

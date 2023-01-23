@@ -29,20 +29,20 @@ $i = 1;
 						</tr>
 						</thead>
 						<tbody>
-							<?php foreach ($article as $row) { ?>
-						<tr data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-							<th scope="row"><?= $i++ ?></th>
+							<?php foreach ($article as $row) {?>
+						<tr data-bs-toggle="collapse" data-bs-target="#collapse<?=$i?>" aria-expanded="true" aria-controls="collapseOne">
+							<th scope="row"><?= $i ?></th>
 							<td><?= $row['title'] ?></td>
 							<td><?= $row['categorie'] ?></td>
 							<td><?= $row['dateCreate'] ?></td>
 							<td><i class="fa" aria-hidden="false"></i></td>
 						</tr> 
-						<?php }?>
-						<tr id="collapseOne" class="collapse" class="w-100 bg-light-cyan border-2" >
+						<tr id="collapse<?=$i?>" class="collapse" class="w-100 bg-light-cyan border-2" >
 							<td colspan="5">
 								<p><?= $row['content']?></p>
 							</td>
 						</tr>
+						<?php  $i++; }?>
 						</tbody>
 					</table>
 				</div>
