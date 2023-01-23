@@ -3,15 +3,16 @@
 $cat = Categorie::show();
 
 if(isset($_POST['bntADD'])){
+    // echo "<script>alert(".$_POST['linghtCoount'].")</script>";
+    for ($i = 0; $i < $_POST['linghtCoount']+1; $i++){
 
-    for ($i = 0; $i < $_POST['linghtCoount']; $i++){
         $title = $_POST["txtTitle"][$i];
         $content = $_POST["txtArticle"][$i];
         $category = $_POST["categorySelect"][$i];
         $admin = 1; 
         $date = date('y-m-d');
-        // echo "<script>alert('$title')</script>";
-         Article::create($title, $content, $admin, $date, $category);
+        //  echo "<script>alert('$title')</script>";
+        Article::create($title, $content, $admin, $date, $category);
     }
 }
 ?>

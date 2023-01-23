@@ -59,32 +59,54 @@ function addEdit(){
 
 function addArticle(){
 
-    let Categorie = document.getElementById('categorySelect');
+    // let catContent = ;
+    // let catValue = ;
+    
+    
 
-    console.log(Categorie);
-
-    lenght++;
+    
+    
+    
     $('#linghtCoount').val(lenght);
     $("#addNewArticle").append(`<div class="d-flex justify-content-end w-100 align-items-center" >
-                                    <div class="mx-5">
-                                        <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect[]" id="">
-                                            <option selected>..Chose Categorie..</option>
-                                            <?php foreach ($cat as $row){ ?>
-                                            <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
-                                            <?php }?>
-                                        </select>
+    <div class="mx-5">
+                                    <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categorySelect[]" id="categorySelect${lenght}">
+                                    <!--<option value="1">1</option>-->
+                                    
+                                    </select>
                                     </div>
                                     <div class="w-75">
                                         <div class="my-1 ">
                                                 <input class="form-control w-25" type="text" name="txtTitle[]" id="txtTitle" placeholder="Title">
-                                            </div> 
+                                                </div> 
                                             <textarea class="w-100" name="txtArticle[]" id="txtArticle" cols="70" rows="6"></textarea>
                                             </div>
                                             <button class="btn btn-danger" type="button" id="btnRemove">Remove</button>
                                             </div>`);
-
+                                            
+    // console.log(lenght);
+    remlireSelect();
+    lenght++;
+                                            
 }
 
+function remlireSelect(){
+    let Categorie = document.getElementById('categorySelect'+lenght);
+    // console.log(Categorie);
+    let cat = document.getElementById('categorySelect').children;
+    // console.log(cat);
+    
+   
+    
+    for(let i= 0 ; i < cat.length ; i++){
+        let option = document.createElement("option");
+        
+        option.text  = cat[i].text;
+        option.value = cat[i].value;
+        Categorie.appendChild(option);
+        
+    }
+}
 
 $('body').on('click','#btnRemove',function(){
     $(this).closest('div').remove();
