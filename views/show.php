@@ -17,7 +17,7 @@ $i = 1;
 								<th>title</th>
 								<th>categorie</th>
 								<th>dateCreate</th>
-								<th></th>
+								<th>content</th>
 							</tr>
 						</thead>
 						<tbody>

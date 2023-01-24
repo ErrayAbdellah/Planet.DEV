@@ -119,3 +119,12 @@ $('body').on('click','#btnRemove',function(){
 $(document).ready( function () {
     $('#dataTable').DataTable();
 } );
+
+
+function readData(id,title,content,cat){
+    document.getElementById('txtId').value       = id ; 
+    document.getElementById('categoryD').value   = cat ; 
+    document.getElementById('txtTitleD').value   = title ; 
+    document.getElementById('txtArticleD').value = content; 
+    
+}

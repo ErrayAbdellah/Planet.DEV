@@ -46,14 +46,29 @@ class Article{
             "Error".$e->getMessage();
         }
     }
-    public static function upDate($id){
-
+    public static function upDate($id,$title,$content,$id_cat){
+        try{
+            
+            $connect = new  Dbconnection();
+            $qry = "UPDATE article SET title = '$title', content= '$content', id_cat = $id_cat WHERE id = $id ";
+            $stmt = $connect->connection()->prepare($qry);
+            $stmt->execute();
+                       
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
     }
     public static function delete($id){
-
+        try{
+            $connect = new  Dbconnection();
+            $qry = "DELETE FROM article WHERE id = $id ";
+            $stmt = $connect->connection()->prepare($qry);
+            $stmt->execute();
+                       
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
     }
 
 
 }
-
-// var_dump(Article::show());

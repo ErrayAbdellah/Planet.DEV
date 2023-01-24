@@ -1,10 +1,36 @@
+<?php 
+
+if(isset($_POST['bntSaveEdit'])){
+
+	$id = $_POST["txtId"];
+	$title = $_POST["txtTitleD"];
+	$content = $_POST["txtArticleD"];
+	$id_cat = $_POST["categoryD"];
+
+	// $id = 18;
+	// $title ="nn";
+	// $content ="nn";
+	// $id_cat = "3";
+	// ECHO "<script> alert(".$id . $title.$content.$id_cat.")</script>" ;
+	Article::upDate($id,$title,$content,$id_cat);
+}
+
+if(isset($_GET['delete'])){
+	$id = $_GET['delete'];
+	// ECHO " <script> alert('$id')</script>" ;
+	Article::delete($id);
+}
+
+?>
+
+
 <div id="editSet" class="col mt-5">
     <section id="add"  >
         <h4 class="text-center my-5">Setting Article</h4>
-        <form action="" method="post">
+        <form action="index.php" method="post">
             <div class="d-flex justify-content-end w-100 align-items-center">
                 <div class="mx-5">
-                    <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="" id="">
+                    <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categoryD" id="categoryD">
                         <option selected>..Chose Categorie..</option>
                         <?php foreach ($cat as $row){ ?>
                         <option value="<?= $row['id'] ?>"><?= $row['name'] ?></option>
@@ -15,15 +41,16 @@
                 <div class="w-75">
                 <div class="w-25 my-1">
                     <label for="title"></label>
-                    <input class="form-control" type="text" name="txtTitle" id="txtTitle" placeholder="Title">
+                    <input class="form-control" type="text" name="txtTitleD" id="txtTitleD" placeholder="Title">
                 </div> 
-                    <textarea class="w-100" name="txtArticle" id="txtArticle" cols="70" rows="6"></textarea>
+                    <textarea class="w-100" name="txtArticleD" id="txtArticleD" cols="70" rows="6"></textarea>
                 </div>  
             </div>
             <div class="d-flex justify-content-end mt-3">
+				<input type="hidden"id="txtId" name="txtId">
                 <!-- <button type="button" class="btn btn-danger mx-3" onclick="cancelSettings()">Cancel</button>
                 <button type="button" class="btn btn-info mx-3" onclick="">Add new Article</button> -->
-                <input type="submit" class="btn btn-secondary mx-3" name="bntADD" value="Save">
+                <input type="submit" class="btn btn-secondary mx-3" name="bntSaveEdit" value="Save">
             </div>
         </form>
     </section>
@@ -44,11 +71,18 @@
 						</thead>
 						<tbody>
 							<?php foreach ($article as $row) {?>
-						<tr data-bs-toggle="collapse" data-bs-target="#collapse<?=$i?>" aria-expanded="true" aria-controls="collapseOne">
+						<!-- <tr data-bs-toggle="collapse" data-bs-target="#collapse<?=$i?>" aria-expanded="true" aria-controls="collapseOne"> -->
+						<tr >
 							<th scope="row"><?= $i ?></th>
 							<td><?= $row['title'] ?></td>
 							<td><?= $row['categorie'] ?></td>
 							<td><?= $row['dateCreate'] ?></td>
+							<td>
+								<button class="btn btn-warning" onclick="readData(<?= $row['id'] ?>,'<?= $row['title'] ?>','<?= $row['content'] ?>','<?= $row['id_cat'] ?>')" name="btnEdit">Edit</button> 
+								<!-- <form action="" method="get"> -->
+									<a class="btn btn-danger" href="index.php?delete=<?= $row['id'] ?>"  aria-hidden="true" >Delete</a>
+								<!-- </form> -->
+							</td>
 							<td><i class="fa" aria-hidden="false"></i></td>
 						</tr> 
 						<tr id="collapse<?=$i?>" class="collapse" class="w-100 bg-light-cyan border-2" >
