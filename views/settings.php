@@ -1,6 +1,6 @@
 
-<div class="col-md-10 " id="settings">
-    <div class="d-flex justify-content-around align-items-center h-100">
+<div class="col-md-10 mt-5" id="settings">
+    <div class="d-flex justify-content-around flex-wrap align-items-center mt-5">
         <div class="col-xl-3 col-lg-6 text-center text-center">
             <button  onclick="addSettings()" class="card l-bg-cherry">
                 <div class="card-statistic-3 p-5">

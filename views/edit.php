@@ -25,7 +25,7 @@ if(isset($_GET['delete'])){
 
 
 <div id="editSet" class="col mt-5">
-    <section id="add"  >
+    <section id="add">
         <h4 class="text-center my-5">Setting Article</h4>
         <form action="index.php" method="post" id="form">
             <div class="d-flex justify-content-end w-100 align-items-center">

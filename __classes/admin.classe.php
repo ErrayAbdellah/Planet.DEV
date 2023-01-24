@@ -11,7 +11,7 @@ class User{
     public static function signIn($email,$pwd){
         try{
             $connect = new  Dbconnection();
-            $qry = "SELECT * FROM admin where email like '$email' and pwd like '$pwd'";
+            $qry = "SELECT * FROM admin where email like '$email' and pwd like  '$pwd'";
             $stmt = $connect->connection()->prepare($qry);
             $stmt->execute();
             $result = $stmt->fetch(PDO::FETCH_ASSOC);
