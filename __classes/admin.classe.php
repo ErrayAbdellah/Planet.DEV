@@ -24,6 +24,8 @@ class User{
                 // echo "<pre>" ;
                 // die() ;
                 header('location:../index.php');
+            }else{
+                $_SESSION['errorLogin'] = "cheked password or email";
             }
 
         }catch(PDOException $e){

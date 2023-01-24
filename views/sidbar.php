@@ -41,7 +41,7 @@ if( isset($_GET['action']) AND $_GET['action'] == 'logOut'){
                 <!-- <form methode="post">
                     <li><input class="dropdown-item" type="submit" name="btnlogOut" value="logOut"/></li>
                 </form> -->
-                <li><a  href="<?= $_SERVER['PHP_SELF']?>?action=logOut">Log Out</a></li>
+                <li><a class="dropdown-item" href="index.php?action=logOut">Log Out</a></li>
 
                     <li><a class="dropdown-item" href="index.php">Settings</a></li>
                     <li>
@@ -52,4 +52,4 @@ if( isset($_GET['action']) AND $_GET['action'] == 'logOut'){
     </div>
 </div>
        
-    
+   

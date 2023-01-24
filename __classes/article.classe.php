@@ -41,6 +41,8 @@ class Article{
             $stmt->bindParam(':dateCreate',$dateCreate );
             $stmt->bindParam(':id_cat',$id_cat );
             $stmt->execute();
+            $_SESSION['message'] = "<strong>Success!</strong> book has been added successfully !!! !";
+            $_SESSION["addition"] = "success";
 
         }catch(PDOException $e){
             "Error".$e->getMessage();
@@ -53,6 +55,8 @@ class Article{
             $qry = "UPDATE article SET title = '$title', content= '$content', id_cat = $id_cat WHERE id = $id ";
             $stmt = $connect->connection()->prepare($qry);
             $stmt->execute();
+            $_SESSION['message'] = "<strong>Success!</strong> Task has been updated successfully !";
+            $_SESSION["addition"] = "success";
                        
         }catch(PDOException $e){
             "Error".$e->getMessage();
@@ -64,7 +68,21 @@ class Article{
             $qry = "DELETE FROM article WHERE id = $id ";
             $stmt = $connect->connection()->prepare($qry);
             $stmt->execute();
+            $_SESSION["addition"] = "success";
+            $_SESSION['message'] = "<strong>Success!</strong>Task has been deleted successfully !";
                        
+        }catch(PDOException $e){
+            "Error".$e->getMessage();
+        }
+    }
+
+    public static function dashboard(){
+        try{
+            $connect = new  Dbconnection();
+            $qry = "SELECT count(*) FROM article ";
+            $stmt = $connect->connection()->prepare($qry);
+            $stmt->execute();
+            return $stmt->fetch(PDO::FETCH_ASSOC);
         }catch(PDOException $e){
             "Error".$e->getMessage();
         }

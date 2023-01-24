@@ -27,7 +27,7 @@ if(isset($_GET['delete'])){
 <div id="editSet" class="col mt-5">
     <section id="add"  >
         <h4 class="text-center my-5">Setting Article</h4>
-        <form action="index.php" method="post">
+        <form action="index.php" method="post" id="form">
             <div class="d-flex justify-content-end w-100 align-items-center">
                 <div class="mx-5">
                     <select class="form-select form-select-lg mb-3 shadow  bg-body-tertiary "name="categoryD" id="categoryD">
@@ -80,7 +80,13 @@ if(isset($_GET['delete'])){
 							<td>
 								<button class="btn btn-warning" onclick="readData(<?= $row['id'] ?>,'<?= $row['title'] ?>','<?= $row['content'] ?>','<?= $row['id_cat'] ?>')" name="btnEdit">Edit</button> 
 								<!-- <form action="" method="get"> -->
-									<a class="btn btn-danger" href="index.php?delete=<?= $row['id'] ?>"  aria-hidden="true" >Delete</a>
+									<a class="btn btn-danger" 
+									onclick="if(confirm('Are You sure to delete this record?')){document.querySelector('#delete-article-<?php echo $row['id'] ?>').submit();} else {return false}"
+									 aria-hidden="true" >Delete</a>
+									 
+									<form action="index.php?delete=<?= $row['id'] ?>" method="get" class="d-none" id="delete-article-<?php echo $row['id'] ?>" >
+										<input type="hidden" name="delete" value="<?php echo $row['id'] ?>" >
+									</form>
 								<!-- </form> -->
 							</td>
 							<td><i class="fa" aria-hidden="false"></i></td>

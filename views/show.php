@@ -5,6 +5,21 @@ $i = 1;
 
 
 <section id="home"class="col ftco-section mt-2  ">
+<?php
+      if(isset($_SESSION['message'])): ?>
+         <div class="d-flex justify-content-center">
+         <div class="alert alert-<?=$_SESSION["addition"];?> w-50 border-rounded text-center">
+              
+              <?php
+              echo $_SESSION['message'];
+              unset($_SESSION['message']);
+              unset( $_SESSION["addition"]);
+              ?>
+              <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+          </div>
+         </div>
+         
+      <?php endif ; ?>
 	<div class="container w-100">
 		<div class="row">
 			<div class="col-md-12">
@@ -26,7 +41,7 @@ $i = 1;
 								<td><?= $row['title'] ?></td>
 								<td><?= $row['categorie'] ?></td>
 								<td><?= $row['dateCreate'] ?></td>
-								<td ><?= $row['content']?> </td>
+								<td><?= $row['content']?> </td>
 								<?php  }?>
 								
 							</tr>
